@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestProject</string>
+
+    <string name="home_add">Add</string>
+    <string name="home_clear">Clear</string>
+    <string name="home_last_name">Last Name</string>
+    <string name="home_first_name">First Name</string>
+</resources>
