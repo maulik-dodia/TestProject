@@ -15,14 +15,16 @@ import com.testproject.databinding.ActivityMainBinding
 import com.testproject.model.User
 import com.testproject.viewmodel.UserViewModel
 import com.testproject.viewmodel.UserViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel: UserViewModel by viewModels {
-        UserViewModelFactory((application as UserApplication).userRepository)
-    }
+    private val viewModel by viewModels<UserViewModel>()
+
     private lateinit var dataBinding: ActivityMainBinding
     private lateinit var userAdapter: UserListRVAdapter
 

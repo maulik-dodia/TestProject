@@ -5,12 +5,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.testproject.model.User
 import com.testproject.repository.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class UserViewModel(private val repository: UserRepository): ViewModel() {
+@HiltViewModel
+class UserViewModel @Inject constructor(private val repository: UserRepository): ViewModel() {
 
     private val firstName = MutableStateFlow("")
     private val lastName = MutableStateFlow("")
